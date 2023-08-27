@@ -18,7 +18,7 @@ class SignUp extends StatelessWidget {
         child: Scaffold(
           body: Center(
             child: Container(
-              margin: const EdgeInsets.all(25.0),
+              margin: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

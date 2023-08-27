@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/home.dart';
 import 'package:todo/sign_up.dart';
 
 class Login extends StatelessWidget {
@@ -18,7 +19,7 @@ class Login extends StatelessWidget {
         child: Scaffold(
           body: Center(
             child: Container(
-              margin: const EdgeInsets.all(25.0),
+              margin: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -94,10 +95,13 @@ class Login extends StatelessWidget {
                         textStyle: const TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 20,
-                            fontWeight: FontWeight.w600)
-                        // minimumSize: const Size.fromWidth(double.infinity)
-                        ),
-                    onPressed: () {},
+                            fontWeight: FontWeight.w600)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Home()),
+                      );
+                    },
                     child: const Text('Login'),
                   ),
                   const SizedBox(
@@ -106,20 +110,28 @@ class Login extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Don\'t have an account?', style: TextStyle(color:Color.fromARGB(255, 73, 71, 71), fontSize: 16)),
+                      const Text('Don\'t have an account?',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 73, 71, 71),
+                              fontSize: 16)),
                       const SizedBox(
                         width: 5,
                       ),
                       TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
                                 builder: (context) => const SignUp()),
-                            );
-                          },
-                          child: const Text('Sign Up', style: TextStyle(color:Colors.deepPurpleAccent, fontSize: 16))
-                  )],
+                          );
+                        },
+                        child: const Text(
+                          'Sign Up',
+                          style: TextStyle(
+                              color: Colors.deepPurpleAccent, fontSize: 16),
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
