@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo/add_task.dart';
 import 'package:todo/supabase_handler.dart';
 
 class Home extends StatefulWidget {
@@ -10,6 +9,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   SupabaseHandler supabaseHandler = SupabaseHandler();
 
   @override
@@ -18,44 +18,37 @@ class _HomeState extends State<Home> {
   }
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: Colors.deepPurpleAccent,
-          canvasColor: Colors.white,
-          fontFamily: 'Poppins',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Colors.deepPurpleAccent,
+        canvasColor: Colors.white,
+        fontFamily: 'Poppins',
+      ),
+      home: const SafeArea(
+        child: Scaffold(
+      //     body: FutureBuilder(
+      //   future: readData(),
+      //   builder: (context, AsyncSnapshot<dynamic> snapshot) {
+      //     if (snapshot.hasData) {
+      //       final tasks = snapshot.data!;
+      //       return ListView.builder(
+      //         itemCount: tasks.length,
+      //         itemBuilder: (BuildContext context, int index) {
+      //           return Card(
+      //             child: Text(tasks[index]['title']),
+      //           );
+      //         },
+      //       );
+      //     } 
+      //     else {
+      //       return Container();
+      //     }
+      //   },
+      // ),),
         ),
-        home: const AddTask()
-        // FutureBuilder(
-        //   builder : (
-        //     BuildContext context,
-        //     AsyncSnapshot<String> snapshot,
-        //   ) {
-        //     if (!snapshot.hasData &&
-        //         snapshot.connectionState == ConnectionState.none) {}
-
-        //     return ListView.builder(
-        //         itemBuilder: (context, index) {
-        //           return Container(
-        //             height: 200,
-        //             color: ((snapshot.data[index]['status'])
-        //                 ? Colors.white
-        //                 : Colors.yellowAccent),
-        //             child: Row(
-        //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //               children: [
-        //                 Container(
-        //                   child: Text(snapshot.data[index]['title']),
-        //                 )
-        //               ],
-        //             ),
-        //           );
-        //         });
-        //   },
-        //   future: SupabaseHandler.readData(),
-        // )
-        );
+      ));
   }
 }

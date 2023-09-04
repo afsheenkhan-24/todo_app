@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:todo/add_task.dart';
 import 'package:todo/home.dart';
+// import 'package:todo/home.dart';
+import 'package:todo/models/tasks.dart';
 import 'package:todo/sign_up.dart';
 
 class Login extends StatelessWidget {
@@ -99,7 +102,7 @@ class Login extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Home()),
+                        MaterialPageRoute(builder: (context) => const Tasks()),
                       );
                     },
                     child: const Text('Login'),
