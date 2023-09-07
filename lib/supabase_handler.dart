@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:supabase/supabase.dart';
 
 class SupabaseHandler {
@@ -25,39 +24,12 @@ class SupabaseHandler {
     );
     var dataList = response;
     return dataList;
-    // if (response) {
-    //   throw Exception('Error fetching data from Supabase: ${response.error}');
-    // }
-    // Extract the data as a List<Map<String, dynamic>> and return it
-    // final data = response as List<Map<String, dynamic>>;
-    // print(data);
-    // return data;
   }
 
-
-
-  // readData() async {
-  //   try {
-  //     var response = await client
-  //   .from('tasks')
-  //   .select()
-  //   .order('title', ascending: true)
-  //   .then((value) => value);
-  //   print(response);
-    
-  //   final dataList = response.data as List;
-  //   return dataList;
-
-  //   } catch (e) {
-  //     print(e.toString());
-  //   }
-    
-  
-
-  updateData(int id, bool statusValue) {
+  updateData(int id, String descrValue, String statusValue) {
     var response = client
     .from('tasks')
-    .update({'status': statusValue})
+    .update({'status': statusValue, 'descr': descrValue})
     .eq('id', id)
     .then((value) => value);
 

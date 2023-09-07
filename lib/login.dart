@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo/add_task.dart';
-import 'package:todo/home.dart';
-// import 'package:todo/home.dart';
-import 'package:todo/models/tasks.dart';
+import 'package:todo/modal_task.dart';
 import 'package:todo/sign_up.dart';
 
 class Login extends StatelessWidget {
@@ -14,12 +11,13 @@ class Login extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.deepPurpleAccent,
+        primaryColor: Colors.deepPurple,
         canvasColor: Colors.white,
         fontFamily: 'Poppins',
       ),
       home: SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Center(
             child: Container(
               margin: const EdgeInsets.all(20.0),
@@ -91,7 +89,7 @@ class Login extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.deepPurpleAccent,
+                        backgroundColor: Colors.deepPurple,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18)),
                         minimumSize: const Size.fromHeight(65),
@@ -102,7 +100,7 @@ class Login extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Tasks()),
+                        MaterialPageRoute(builder: (context) => const ModalTask()),
                       );
                     },
                     child: const Text('Login'),
@@ -131,7 +129,7 @@ class Login extends StatelessWidget {
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(
-                              color: Colors.deepPurpleAccent, fontSize: 16),
+                              color: Colors.deepPurple, fontSize: 16),
                         ),
                       ),
                     ],

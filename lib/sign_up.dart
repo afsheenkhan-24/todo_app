@@ -10,7 +10,7 @@ class SignUp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.deepPurpleAccent,
+        primaryColor: Colors.deepPurple,
         canvasColor: Colors.white,
         fontFamily: 'Poppins',
       ),
@@ -116,7 +116,7 @@ class SignUp extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.deepPurpleAccent,
+                        backgroundColor: Colors.deepPurple,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18)),
                         minimumSize: const Size.fromHeight(65),
@@ -146,7 +146,7 @@ class SignUp extends StatelessWidget {
                           },
                           child: const Text('Login',
                               style: TextStyle(
-                                  color: Colors.deepPurpleAccent,
+                                  color: Colors.deepPurple,
                                   fontSize: 16)))
                     ],
                   )
