@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo/modal_task.dart';
-import 'package:todo/supabase_handler.dart';
+import 'package:todo/home/home.dart';
+import 'package:todo/database/supabase_handler.dart';
 
 class Tasks extends StatefulWidget {
   const Tasks({super.key});
@@ -22,7 +22,7 @@ class _TasksState extends State<Tasks> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          const ModalTask();
+          const Home();
         },
         focusColor: Colors.deepPurpleAccent,
         autofocus: true,
